@@ -11,19 +11,16 @@ recogizer=cv2.face.LBPHFaceRecognizer_create()
 recogizer.read(r'C:\Users\16248\Desktop\ceshi\mycodetest\opencv\trainer\trainer.yml')
 names=[]
 warningtime = 0
-
-#准备识别的图片
 def face_detect_demo(img):
-    gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)#转换为灰度
+    gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
     face_detector=cv2.CascadeClassifier(r'D:\anaconda\envs\yolov5\Lib\site-packages\cv2\data\haarcascade_frontalface_alt2.xml')
     face=face_detector.detectMultiScale(gray)
-    #face=face_detector.detectMultiScale(gray)
     for x,y,w,h in face:
         cv2.rectangle(img,(x,y),(x+w,y+h),color=(0,0,255),thickness=2)
         cv2.circle(img,center=(x+w//2,y+h//2),radius=w//2,color=(0,255,0),thickness=1)
         # 人脸识别
         ids, confidence = recogizer.predict(gray[y:y + h, x:x + w])
-        #print('标签id:',ids,'置信评分：', confidence)
+        # print('标签id:',ids,'置信评分：', confidence)
         if confidence > 80:
             global warningtime
             warningtime += 1
