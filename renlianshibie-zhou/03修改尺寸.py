@@ -1,5 +1,5 @@
 import cv2 as cv
-img=cv.imread("C:/Users/16248/vanli/StudyGit/renlianshibie-zhou/face1.png")
+img=cv.imread(r"renlianshibie-zhou/face1.png")
 resize_img=cv.resize(img,dsize=(200,200))
 # 修改尺寸
 cv.imshow('img',img)

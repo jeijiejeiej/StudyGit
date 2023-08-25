@@ -9,7 +9,7 @@ def getImageAndLabels(path):
     ids=[]
     imagePaths=[os.path.join(path,f) for f in os.listdir(path)]
     #检测人脸
-    face_detector = cv2.CascadeClassifier(r'D:\anaconda\envs\yolov5\Lib\site-packages\cv2\data\haarcascade_frontalface_alt2.xml')
+    face_detector = cv2.CascadeClassifier(r'renlianshibie-zhou\haar\haarcascade_frontalface_alt2.xml')
     #打印数组imagePaths
     print('数据排列：',imagePaths)
     #遍历列表中的图片
@@ -38,13 +38,13 @@ def getImageAndLabels(path):
 
 if __name__ == '__main__':
     #图片路径
-    path='C:/Users/16248/vanli/StudyGit/renlianshibie-zhou/jm/'
+    path='renlianshibie-zhou/jm/'
     #获取图像数组和id标签数组和姓名
     faces,ids=getImageAndLabels(path)
     #获取训练对象
-    recognizer=cv2.face.LBPHFaceRecognizer_create()
+    recognizer=cv2.face.LBPHFaceRecognizer_create() # type: ignore
     #recognizer.train(faces,names)#np.array(ids)
     recognizer.train(faces,np.array(ids))
     #保存文件
-    recognizer.write('C:/Users/16248/vanli/StudyGit/renlianshibie-zhou/trainer/trainer.yml')
+    recognizer.write('renlianshibie-zhou/trainer/trainer.yml')
     #save_to_file('names.txt',names)

@@ -1,5 +1,5 @@
 import cv2 as cv
-img=cv.imread("C:/Users/16248/vanli/StudyGit/renlianshibie-zhou/face1.png")
+img=cv.imread(r"renlianshibie-zhou/face1.png")
 # 坐标
 x,y,w,h=100,100,100,100
 # 绘制矩形
