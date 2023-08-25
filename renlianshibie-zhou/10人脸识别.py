@@ -5,15 +5,26 @@ import os
 import urllib
 import urllib.request
 import hashlib
+# 此程序按空格键退出，详情间最后的while
+# 看上面一条
+# 看上面一条前面信息录入也是这么搞的
+
+
+
+
+
+
+
+
 
 #加载训练数据集文件
-recogizer=cv2.face.LBPHFaceRecognizer_create()
-recogizer.read(r'C:\Users\16248\Desktop\ceshi\mycodetest\opencv\trainer\trainer.yml')
+recogizer=cv2.face.LBPHFaceRecognizer_create() # type: ignore
+recogizer.read(r'renlianshibie-zhou\trainer\trainer.yml')
 names=[]
 warningtime = 0
 def face_detect_demo(img):
     gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-    face_detector=cv2.CascadeClassifier(r'D:\anaconda\envs\yolov5\Lib\site-packages\cv2\data\haarcascade_frontalface_alt2.xml')
+    face_detector=cv2.CascadeClassifier(r'renlianshibie-zhou\haar\haarcascade_frontalface_alt2.xml')
     face=face_detector.detectMultiScale(gray)
     for x,y,w,h in face:
         cv2.rectangle(img,(x,y),(x+w,y+h),color=(0,0,255),thickness=2)
@@ -32,7 +43,7 @@ def face_detect_demo(img):
     cv2.imshow('result',img)
     #print('bug:',ids)
 def name():
-    path = r'C:\Users\16248\vanli\StudyGit\renlianshibie-zhou\jm'
+    path = r'renlianshibie-zhou\jm'
     #names = []
     imagePaths=[os.path.join(path,f) for f in os.listdir(path)]
     for imagePath in imagePaths:
@@ -40,7 +51,7 @@ def name():
        names.append(name)
 
 
-cap=cv2.VideoCapture(r'C:\Users\16248\vanli\StudyGit\renlianshibie-zhou\1.mp4')
+cap=cv2.VideoCapture(r'renlianshibie-zhou\1.mp4')
 name()
 while True:
     flag,frame=cap.read()

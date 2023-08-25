@@ -1,6 +1,5 @@
 import cv2 as cv
-img=cv.imread("C:/Users/16248/vanli/StudyGit/renlianshibie-zhou/face1.png")
-
+img=cv.imread(r"renlianshibie-zhou\face1.png")
 cv.imshow("read_img",img)
 # 展示
 cv.waitKey(0)

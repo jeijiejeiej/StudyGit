@@ -8,7 +8,7 @@ while(cap.isOpened()):# 检测石是否在开启状态
     cv2.imshow('Capture_Test',Vshow)#显示图像
     k=cv2.waitKey(1) & 0xFF
     if k==ord('s'):#按键判断:按s保存
-        cv2.imwrite("C:/Users/16248/vanli/StudyGit/renlianshibie-zhou/jm/"+str(num)+".zhou"+".jpg",Vshow)
+        cv2.imwrite("renlianshibie-zhou/jm/"+str(num)+".zhou"+".jpg",Vshow)
         print("success to save"+str(num)+'.jpg')
         print("---------------------------")
         num+=1
