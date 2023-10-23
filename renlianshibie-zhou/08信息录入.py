@@ -3,7 +3,7 @@ import cv2
 cap=cv2.VideoCapture(0)
 falg=1
 num=1
-while(cap.isOpened()):# 检测石是否在开启状态
+while(cap.isOpened()):# 检测是否在开启状态
     ret_flag,Vshow=cap.read()#得到每帧图像
     cv2.imshow('Capture_Test',Vshow)#显示图像
     k=cv2.waitKey(1) & 0xFF

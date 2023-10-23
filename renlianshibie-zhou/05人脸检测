@@ -9,7 +9,7 @@ def face_detect_demo():
     for x,y,w,h in face:
         cv.rectangle(img,(x,y),(x+w,y+h),color=(0,0,255),thickness=2)
         cv.imshow('result',img)
-img=cv.imread("C:/Users/16248/vanli/StudyGit/renlianshibie-zhou/face1.png")
+img=cv.imread("C:/Users/16248/vanli/StudyGit/renlianshibie-zhou/jm/2.zhangjie1.jpg")
 # 检测函数
 face_detect_demo()
 # 按下英文输入法q退出
